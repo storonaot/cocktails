@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "✅ Husky is working!"
+npx lint-staged
