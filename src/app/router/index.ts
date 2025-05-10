@@ -14,7 +14,7 @@ export const router = createRouter({
       redirect: `/${DEFAULT_COCTAIL_CODE}`,
     },
     {
-      path: `/:cocktailCode(${cocktailPattern})`,
+      path: `/:cocktailCode(${cocktailPattern})/:idDrink?`,
       name: 'CocktailPage',
       component: CocktailPage,
     },

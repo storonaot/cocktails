@@ -6,3 +6,10 @@ export enum COCKTAIL_CODE {
 }
 
 export type CocktailCode = `${COCKTAIL_CODE}`
+
+export interface Drink {
+  idDrink: string
+  strDrink: string
+  strDrinkThumb: string
+  strInstructions: string
+}
