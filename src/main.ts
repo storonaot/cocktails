@@ -5,4 +5,6 @@ import '@/shared/styles/base/globals.scss'
 import App from '@/app/App.vue'
 import { router } from '@/app/router'
 
-createApp(App).use(router).mount('#app')
+import { VueQueryPlugin } from '@tanstack/vue-query'
+
+createApp(App).use(router).use(VueQueryPlugin).mount('#app')
