@@ -1,0 +1,19 @@
+@use '../variables/spacing' as *;
+
+@function spacing($steps) {
+  @return $spacing-unit * $steps;
+}
+
+@mixin padding($steps) {
+  padding: spacing($steps);
+}
+
+@mixin padding-x($steps) {
+  padding-left: spacing($steps);
+  padding-right: spacing($steps);
+}
+
+@mixin padding-y($steps) {
+  padding-top: spacing($steps);
+  padding-bottom: spacing($steps);
+}

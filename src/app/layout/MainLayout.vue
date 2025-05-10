@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <nav class="layout__nav">
+    <nav class="nav">
       <CocktailMenu />
     </nav>
     <main class="layout__main">
@@ -10,26 +10,30 @@
 </template>
 
 <script setup lang="ts">
-import CocktailMenu from '@/features/CocktailMenu.vue'
+import CocktailMenu from '@/widgets/CocktailMenu.vue'
 </script>
 
 <style scoped lang="scss">
 .layout {
-  max-width: 1024px;
-  min-width: 360px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: spacing(4);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: spacing(4);
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
 
-  &__nav {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.5rem;
-  }
+.nav {
+  border-bottom: 1px solid var(--color-control-hover-bg);
+  padding-bottom: spacing(2);
+}
 
-  &__main {
-    flex: 1;
-  }
+.main {
+  flex: 1;
 }
 </style>

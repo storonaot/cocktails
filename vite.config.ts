@@ -9,4 +9,11 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'), // ⬅️ Important
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/shared/styles/index.scss" as *;`,
+      },
+    },
+  },
 })
