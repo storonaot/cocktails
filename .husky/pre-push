@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "🧪 Running full test suite with coverage before push..."
+yarn test:coverage
