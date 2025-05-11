@@ -36,19 +36,6 @@ const formatName = (code: CocktailCode) => code.charAt(0).toUpperCase() + code.s
 }
 
 .menu-link {
-  text-decoration: none;
-  color: var(--color-control-fg);
-  padding: spacing(2) spacing(4);
-  border-radius: 6px;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: var(--color-control-hover-bg);
-  }
-
-  &.isActive {
-    background-color: var(--color-control-active-bg);
-    color: var(--color-control-active-fg);
-  }
+  @include control-base;
 }
 </style>

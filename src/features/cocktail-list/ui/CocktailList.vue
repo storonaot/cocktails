@@ -26,8 +26,6 @@ defineEmits<{
 </script>
 
 <style scoped lang="scss">
-$sidebar-width: 200px;
-
 .cocktail-list {
   display: flex;
   flex-direction: row;
@@ -44,25 +42,14 @@ $sidebar-width: 200px;
 }
 
 .item {
+  @include control-base;
+
   flex-shrink: 0;
-  padding: spacing(2);
-  background: none;
-  border: none;
-  padding: spacing(2);
-  border-radius: $radius-default;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: var(--color-control-hover-bg);
-  }
-
-  &.isActive {
-    background-color: var(--color-control-active-bg);
-    color: var(--color-control-active-fg);
-  }
 }
 
 @include media-up('tablet') {
+  $sidebar-width: 200px;
+
   .cocktail-list {
     flex-direction: column;
     overflow-x: hidden;

@@ -1,0 +1,31 @@
+@use '../variables/radius' as *;
+@use './spacing' as *;
+
+@mixin control-base {
+  display: inline-block;
+  padding: spacing(2) spacing(4);
+  border: none;
+  border-radius: $radius-default;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+  color: var(--color-control-fg);
+  text-decoration: none;
+  background: none;
+  border: none;
+
+  &:hover {
+    background-color: var(--color-control-hover-bg);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.isActive {
+    background-color: var(--color-control-active-bg);
+    color: var(--color-control-active-fg);
+  }
+}
