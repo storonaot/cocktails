@@ -2,12 +2,9 @@
   <article class="card">
     <h2>{{ cocktail.strDrink }}</h2>
     <div class="content">
-      <img
-        class="card-image"
-        :src="cocktail.strDrinkThumb"
-        :alt="cocktail.strDrink"
-        loading="lazy"
-      />
+      <div class="card-image">
+        <PlaceholderImage :src="cocktail.strDrinkThumb" :alt="cocktail.strDrink" loading="lazy" />
+      </div>
       <p class="description">{{ cocktail.strInstructions }}</p>
     </div>
   </article>
@@ -15,6 +12,7 @@
 
 <script setup lang="ts">
 import { Cocktail } from '@/entities/cocktail/model/types'
+import { PlaceholderImage } from '@/shared/ui/placeholder-image'
 
 defineProps<{ cocktail: Cocktail }>()
 </script>
@@ -29,6 +27,7 @@ defineProps<{ cocktail: Cocktail }>()
   border-radius: $radius-default;
   background-color: var(--color-surface);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .content {

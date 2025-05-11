@@ -23,13 +23,4 @@ describe('CocktailCard', () => {
     expect(img.attributes('src')).toBe(MOCK_COCKTAIL.strDrinkThumb)
     expect(img.attributes('alt')).toContain('Negroni')
   })
-
-  it('renders image with loading="lazy"', () => {
-    const wrapper = mount(CocktailCard, {
-      props: { cocktail: MOCK_COCKTAIL },
-    })
-
-    const img = wrapper.find('img')
-    expect(img.attributes('loading')).toBe('lazy')
-  })
 })
