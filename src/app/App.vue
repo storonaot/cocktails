@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import MainLayout from '@/app/layout/MainLayout.vue'
+import { MainLayout } from '@/app/layout/main-layout'
 // TODO: вынести/отделить?
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light')

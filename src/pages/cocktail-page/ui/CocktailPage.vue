@@ -9,7 +9,7 @@
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 import { useCocktails } from '@/entities/cocktail/model/useCocktails'
-import CocktailViewer from '@/widgets/CocktailViewer.vue'
+import { CocktailViewer } from '@/widgets/cocktail/ui/cocktail-viewer'
 
 const route = useRoute()
 const cocktailCode = computed(() => route.params.cocktailCode as string)

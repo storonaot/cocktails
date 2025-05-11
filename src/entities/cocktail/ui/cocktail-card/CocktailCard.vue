@@ -7,9 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import { Drink } from '@/entities/cocktail/model/types'
+import { Cocktail } from '@/entities/cocktail/model/types'
 
-defineProps<{ cocktail: Drink }>()
+defineProps<{ cocktail: Cocktail }>()
 </script>
 
 <style scoped lang="scss">

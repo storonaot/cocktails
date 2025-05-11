@@ -1,6 +1,6 @@
 <template>
   <ul class="menu">
-    <li v-for="code in COCKTAIL_CODE" :key="code" class="menu-item">
+    <li v-for="code in COCKTAIL_CODES" :key="code" class="menu-item">
       <router-link :to="`/${code}`" :class="['menu-link', { isActive: isActive(code) }]">
         {{ formatName(code) }}
       </router-link>
@@ -9,7 +9,9 @@
 </template>
 
 <script setup lang="ts">
-import { COCKTAIL_CODE, type CocktailCode } from '@/entities/cocktail/model/types'
+import { type CocktailCode } from '@/entities/cocktail/model/types'
+import { COCKTAIL_CODES } from '@/entities/cocktail/model/constants'
+
 import { useRoute } from 'vue-router'
 
 const route = useRoute()

@@ -8,12 +8,12 @@
 <script setup lang="ts">
 import { computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import CocktailList from '@/features/cocktail-list/ui/CocktailList.vue'
-import CocktailCard from '@/entities/cocktail/ui/CocktailCard.vue'
-import { Drink } from '@/entities/cocktail/model/types'
+import { CocktailList } from '@/features/cocktail-list/ui'
+import { CocktailCard } from '@/entities/cocktail/ui/cocktail-card'
+import { Cocktail } from '@/entities/cocktail/model/types'
 
 const props = defineProps<{
-  cocktails: Drink[]
+  cocktails: Cocktail[]
 }>()
 
 const route = useRoute()

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import CocktailPage from '@/pages/CocktailPage.vue'
-import NotFoundPage from '@/pages/NotFoundPage.vue'
+import { CocktailPage } from '@/pages/cocktail-page/ui'
+import { NotFoundPage } from '@/pages/not-found-page/ui'
 import { DEFAULT_COCTAIL_CODE } from '@/entities/cocktail/model/constants'
 import { COCKTAIL_CODE } from '@/entities/cocktail/model/types'
 

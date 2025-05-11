@@ -7,7 +7,7 @@ export enum COCKTAIL_CODE {
 
 export type CocktailCode = `${COCKTAIL_CODE}`
 
-export interface Drink {
+export interface Cocktail {
   idDrink: string
   strDrink: string
   strDrinkThumb: string

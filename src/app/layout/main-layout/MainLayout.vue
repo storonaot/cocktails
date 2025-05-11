@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import CocktailMenu from '@/widgets/CocktailMenu.vue'
+import { CocktailMenu } from '@/widgets/cocktail/ui/cocktail-menu'
 </script>
 
 <style scoped lang="scss">

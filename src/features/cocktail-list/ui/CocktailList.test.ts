@@ -1,10 +1,9 @@
 import { mount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import CocktailList from './CocktailList.vue'
+import { THUMB_IMG } from '@/shared/tests/mocks/constants'
+import { CocktailList } from '.'
 
-const THUMB_IMG = 'https://via.placeholder.com/150'
-
-const COCKTAILS_MOCK = [
+const MOCK_COCKTAIL_LIST = [
   {
     idDrink: '1',
     strDrink: 'Margarita',
@@ -25,7 +24,7 @@ describe('CocktailList', () => {
   it('renders cocktail buttons and highlights selected', () => {
     const wrapper = mount(CocktailList, {
       props: {
-        cocktails: COCKTAILS_MOCK,
+        cocktails: MOCK_COCKTAIL_LIST,
         selectedId: SELECTED_ID,
       },
     })
@@ -46,7 +45,7 @@ describe('CocktailList', () => {
   it('emits "select" event when a cocktail is clicked', async () => {
     const wrapper = mount(CocktailList, {
       props: {
-        cocktails: COCKTAILS_MOCK,
+        cocktails: MOCK_COCKTAIL_LIST,
         selectedId: null,
       },
     })

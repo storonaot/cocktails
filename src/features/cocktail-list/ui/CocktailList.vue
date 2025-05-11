@@ -12,10 +12,10 @@
 </template>
 
 <script setup lang="ts">
-import { Drink } from '@/entities/cocktail/model/types'
+import { Cocktail } from '@/entities/cocktail/model/types'
 
 defineProps<{
-  cocktails: Drink[]
+  cocktails: Cocktail[]
   selectedId: string | null
 }>()
 
