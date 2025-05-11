@@ -30,9 +30,9 @@ function selectCocktail(id: string) {
 watch(
   () => props.cocktails,
   (newCocktails) => {
-    if (newCocktails.length > 0 && !route.params.idDrink) {
+    if (newCocktails.length > 0 && !newCocktails.some((c) => c.idDrink === route.params.idDrink)) {
       router.replace({
-        params: { ...route.params, idDrink: newCocktails[0].idDrink },
+        params: { idDrink: newCocktails[0].idDrink },
       })
     }
   },
