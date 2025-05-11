@@ -44,9 +44,9 @@ watch(
 .viewer {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: spacing(4);
 
-  @media (min-width: 768px) {
+  @include media-up('tablet') {
     flex-direction: row;
     align-items: flex-start;
   }
