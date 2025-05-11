@@ -1,8 +1,15 @@
 <template>
   <article class="card">
-    <h2 class="card-title">{{ cocktail.strDrink }}</h2>
-    <img class="card-image" :src="cocktail.strDrinkThumb" :alt="cocktail.strDrink" loading="lazy" />
-    <p class="card-description">{{ cocktail.strInstructions }}</p>
+    <h2>{{ cocktail.strDrink }}</h2>
+    <div class="content">
+      <img
+        class="card-image"
+        :src="cocktail.strDrinkThumb"
+        :alt="cocktail.strDrink"
+        loading="lazy"
+      />
+      <p class="description">{{ cocktail.strInstructions }}</p>
+    </div>
   </article>
 </template>
 
@@ -16,26 +23,47 @@ defineProps<{ cocktail: Cocktail }>()
 .card {
   display: flex;
   flex-direction: column;
-  gap: spacing(2);
+  gap: spacing(3);
   padding: spacing(3);
-  border-radius: 6px;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin: 0 auto;
+  border-radius: $radius-default;
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.card-image {
-  max-width: 100%;
-  border-radius: 6px;
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(3);
 }
 
-.card-title {
-  font-size: 1.5rem;
-  font-weight: bold;
+.title {
+  font-size: 1.25em;
+  font-weight: 600;
   margin: 0;
 }
 
-.card-description {
-  line-height: 1.4;
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: $radius-default;
+  object-fit: cover;
+}
+
+.description {
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+@include media-up('tablet') {
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .card-image,
+  .description {
+    width: 50%;
+  }
 }
 </style>

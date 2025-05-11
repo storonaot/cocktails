@@ -3,6 +3,7 @@
     <button
       v-for="cocktail in cocktails"
       :key="cocktail.idDrink"
+      :title="cocktail.strDrink"
       :class="['item', { isActive: cocktail.idDrink === selectedId }]"
       @click="$emit('select', cocktail.idDrink)"
     >
@@ -25,24 +26,30 @@ defineEmits<{
 </script>
 
 <style scoped lang="scss">
-$sidebar-width: 250px;
+$sidebar-width: 200px;
 
 .cocktail-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: spacing(2);
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: spacing(1);
+  max-width: 100%;
+  scrollbar-width: none;
 
-  max-width: $sidebar-width;
-  width: 100%;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .item {
+  flex-shrink: 0;
+  padding: spacing(2);
   background: none;
   border: none;
   padding: spacing(2);
-  text-align: left;
-  cursor: pointer;
-  border-radius: 6px;
+  border-radius: $radius-default;
   transition: background-color 0.2s;
 
   &:hover {
@@ -52,6 +59,24 @@ $sidebar-width: 250px;
   &.isActive {
     background-color: var(--color-control-active-bg);
     color: var(--color-control-active-fg);
+  }
+}
+
+@include media-up('tablet') {
+  .cocktail-list {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: $sidebar-width;
+    width: 100%;
+  }
+
+  .item {
+    text-align: left;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 </style>
